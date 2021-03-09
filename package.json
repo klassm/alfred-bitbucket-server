@@ -1,0 +1,18 @@
+{
+  "name": "alfred-bitbucket-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "alfy": "^0.10.0",
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0"
+  },
+  "scripts": {
+    "alfredPackage": "rm -f zip alfred-bitbucket-server.alfredworkflow && zip alfred-bitbucket-server.alfredworkflow ./* -x@alfred_package.ignore",
+    "alfredLink": "rm -f ~/Library/Application\\ Support/Alfred/Alfred.alfredpreferences/workflows/user.workflow.alfred-bitbucket-server && ln -s ${PWD} ~/Library/Application\\ Support/Alfred/Alfred.alfredpreferences/workflows/user.workflow.alfred-bitbucket-server"
+  }
+}
