@@ -14,7 +14,7 @@ if (!bitbucketUrl || !bitbucketUsername || !bitbucketPassword) {
 }
 
 async function loadRepositoryPage(start = 0) {
-  const result = await axios.get(`${bitbucketUrl}/rest/api/1.0/repos?limit=100&start=${start}`, {
+  const result = await axios.get(`${bitbucketUrl}/rest/api/1.0/repos?limit=1000&start=${start}`, {
     auth: {
       username: bitbucketUsername,
       password: bitbucketPassword
