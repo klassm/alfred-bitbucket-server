@@ -43,7 +43,7 @@ async function getAllRepositories() {
     return repositories;
   }
   const newRepositories = await loadAllRepositories();
-  alfy.cache.set(cacheKey, newRepositories, {maxAge: 1000 * 60 * 60});
+  alfy.cache.set(cacheKey, newRepositories, {maxAge: 1000 * 60 * 60 * 5});
   return newRepositories;
 }
 
