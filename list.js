@@ -50,7 +50,7 @@ async function getAllRepositories() {
 
 function matchOptionsFor(option) {
   const optionParts = option?.toLowerCase().replace(/[^a-z]/, "")?.split(" ") ?? [];
-  return optionParts.flatMap(part => {
+  const partResults = optionParts.flatMap(part => {
     const subParts = part.split(/[-_]/g);
     const acronym = subParts.length >= 3
         ? subParts.map(part => part.charAt(0)).join("")
@@ -58,7 +58,8 @@ function matchOptionsFor(option) {
     return [
       part, acronym, ...subParts
     ].filter(it => it).filter(it => it.length > 2);
-  })
+  });
+  return [...partResults, option];
 }
 
 function toAlfred(option) {
